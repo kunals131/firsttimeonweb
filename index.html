@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the most extraordinary hotel in Boston Massachusetts">
+    <meta name="keywords" content="hotel, boston, hotel, newengland">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7279e62390.js" crossorigin="anonymous"></script>
+    <title>Home BT | Welcome</title>
+    <script>
+        function show_page(page)
+        {
+            let elemt = document.querySelector(`#${page}-section`);
+            // if (elemt.style.animationPlayState==='paused')
+            // {
+                elemt.style.animationPlayState = 'running';
+            // }
+            // else {
+            //     elemt.style.animationPlayState = 'paused';
+            // }
+            document.querySelector('#home-section').style.display = 'none';
+            document.querySelector('#about-section').style.display = 'none';
+            document.querySelector('#contact-section').style.display = 'none';
+            document.querySelector(`#home-btn`).className = "";
+            document.querySelector(`#about-btn`).className = "";
+            document.querySelector(`#contact-btn`).className = "";
+            
+
+            document.querySelector(`#${page}-section`).style.display = 'block';
+            document.querySelector(`#${page}-btn`).className = "current";
+
+            
+        }
+
+        function show_pages(page)
+        {
+            elemt.querySelector(`#${page}-btn`);
+            if (elemt.className!=="current")
+            {
+                document.querySelector('body').style.animationPlayState = 'running';
+                document.querySelector('body').addEventListener('animationend', () => show_page(page));
+            }
+            else {
+                show_page(page);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#home-section').style.display = 'block';
+            document.querySelector('#about-section').style.display = 'none';
+            document.querySelector('#contact-section').style.display = 'none';
+
+            document.querySelector('#home-btn').addEventListener('click', () => show_page('home'));
+            document.querySelector('#about-btn').addEventListener('click', function(){
+                show_page('about');
+                let elemt = document.querySelector('#about-heading');
+                elemt.style.animationPlayState = 'running';
+
+
+            });
+            document.querySelector('#contact-btn').addEventListener('click', () => show_page('contact'));
+        })
+    </script>
+</head>
+<body >
+    <header>
+        <nav id = "navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">HBT</a></h1>
+                <ul>
+                    <li><a class="current" href="#" id="home-btn">Home</a></li>
+                    <li><a href="#" id = "about-btn">About</a></li>
+                    <li><a href="#" id = "contact-btn">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <div id="home-section" class="an-4">
+        <div id = "showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <h1 class="an-1"> <span class="text-primary">Enjoy</span> your Stay</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
+                         elit. Minus, dolorem.</p>
+                    <a href="#" onclick="show_page('about');" class="btn an-2">About our hotel</a>
+                </div>
+            </div>
+        </div>
+    <section id="home-info" class="bg-dark">
+        <div class="info-img"></div>
+        <div class="info-content">
+            <h1><span class="text-primary">The History</span> of our hotel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, omnis error! Voluptate asperiores sint ea in corrupti deleniti consectetur fugit explicabo debitis nulla quae ducimus, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam perspiciatis aperiam voluptatem unde non at, eaque voluptatibus consequatur est mollitia! ipsam nam. Aut repellendus eius, inventore dolores asperiores magnam eveniet?</p>
+            <a href="about.html" class="btn btn-light">Read More</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="box bg-light">
+            <i class="fas fa-hotel fa-3x"></i>
+            <h3>Great Location</h3>
+            <p>Lorem ipsum dolor sit amet 
+                consectetur adipisicing elit. Provident, tempora!</p>
+        </div>
+        <div class="box bg-primary">
+        <i class="fas fa-utensils fa-3x"></i>
+        <h3>Free meals</h3>
+        <p>Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Provident, tempora!</p>
+            </div>
+        <div class="box bg-light">
+        <i class="fas fa-dumbbell fa-3x"></i>
+        <h3>Gym</h3>
+        <p>Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Provident, tempora!</p>
+            </div>
+    </section>
+    <div class="clr"></div>
+
+</div>
+
+<div id="about-section" class="an-4">
+    <section id = "about-info" class="bg-light py-4">
+        <div class="container">
+            <div class="info-left">
+                <h1 class="l-heading an-3" id="about-heading"><span class="text-primary">About</span> Hotel BT</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus architecto, distinctio obcaecati laboriosam corporis ad, dignissimos saepe dolores perspiciatis blanditiis, nobis fuga. Adipisci, amet. Quos iure optio unde sapiente?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil dolore asperiores dignissimos nesciunt rerum minima ex numquam, tempore consequuntur.</p>
+
+            </div>
+            <div class="info-right">
+                <img src="./img/photo-2.jpg" alt="Hotel-image">
+            </div>
+        </div>
+    </section>
+    <div class="clr"></div>
+
+    <section id="testimonials" class="py-3">
+        <div class="container">
+            <h2 class="l-heading">What People say about us!</h2>
+            <div class="testimonial bg-primary" >
+                <img src="./img/person-1.jpg" alt="samantha">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel amet a fugiat, consectetur quam exercitationem, et ducimus dignissimos saepe, quaerat in quos. Id earum est nulla assumenda, quae similique. Porro voluptates ducimus nostrum, modi reiciendis nisi esse fugit quasi nihil.</p>
+            </div>
+            <div class="testimonial bg-primary" >
+                <img src="./img/person-2.jpg" alt="man">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel amet a fugiat, consectetur quam exercitationem, et ducimus dignissimos saepe, quaerat in quos. Id earum est nulla assumenda, quae similique. Porro voluptates ducimus nostrum, modi reiciendis nisi esse fugit quasi nihil.</p>
+            </div>
+
+
+        </div>
+    </section>
+</div>
+
+<div id="contact-section" class="an-4">
+    <section id="contact-form">
+        <div class="container py-3">
+            <h1 class="l-heading"><span class="text-primary">Contact</span> Us</h1>
+            <p>Please Fill Out the form below to contact us!</p>
+            <form action="process.php">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" rows="10" cols="70"></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="contact-info" class="bg-dark">
+        <div class="container">
+            <div class="box">
+                <i class="fas fa-phone fa-3x"></i>
+                <h3>Phone Number</h3>
+                <p>(+91) 03923021222</p>
+            </div>
+            <div class="box">
+            <i class="fas fa-envelope fa-3x"></i>
+            <h3>Email</h3>
+            <p>info@bthotels.com</p>
+                </div>
+            <div class="box">
+            <i class="fas fa-hotel fa-3x"></i>
+            <h3>Location</h3>
+            <p>22 BakerStreet, London UK</p>
+            </div>
+
+        </div>
+    </section>
+</div>
+<footer class="main-footer">
+    <p>Hotel BT &copy; All rights reserverd</p>
+</footer>
+
+</body>
+</html>
